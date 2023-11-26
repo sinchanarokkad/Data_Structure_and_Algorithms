@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdlib.h>
 struct Array
 {
  int A[10];
