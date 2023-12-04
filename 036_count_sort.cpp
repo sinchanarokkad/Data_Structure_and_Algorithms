@@ -40,7 +40,7 @@ void CountSort(int A[], int n){
         count[A[i]]++;
     }
  
-    // Update A with sorted elements
+    
     int i = 0;
     int j = 0;
     while (j < max+1){
