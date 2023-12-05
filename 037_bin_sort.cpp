@@ -24,7 +24,7 @@ int Max(int A[], int n){
     return max;
 }
  
-// Linked List node
+
 class Node{
 public:
     int value;
@@ -36,7 +36,7 @@ void Insert(Node** ptrBins, int idx){
     temp->value = idx;
     temp->next = nullptr;
  
-    if (ptrBins[idx] == nullptr){ // ptrBins[idx] is head ptr
+    if (ptrBins[idx] == nullptr){ 
         ptrBins[idx] = temp;
     } else {
         Node* p = ptrBins[idx];
@@ -48,7 +48,7 @@ void Insert(Node** ptrBins, int idx){
 }
  
 int Delete(Node** ptrBins, int idx){
-    Node* p = ptrBins[idx];  // ptrBins[idx] is head ptr
+    Node* p = ptrBins[idx];  
     ptrBins[idx] = ptrBins[idx]->next;
     int x = p->value;
     delete p;
@@ -58,20 +58,20 @@ int Delete(Node** ptrBins, int idx){
 void BinSort(int A[], int n){
     int max = Max(A, n);
  
-    // Create bins array
+    
     Node** bins = new Node* [max + 1];
  
-    // Initialize bins array with nullptr
+    
     for (int i=0; i<max+1; i++){
         bins[i] = nullptr;
     }
  
-    // Update count array values based on A values
+   
     for (int i=0; i<n; i++){
         Insert(bins, A[i]);
     }
  
-    // Update A with sorted elements
+    
     int i = 0;
     int j = 0;
     while (i < max+1){
@@ -81,7 +81,7 @@ void BinSort(int A[], int n){
         i++;
     }
  
-    // Delete heap memory
+    
     delete [] bins;
 }
  
