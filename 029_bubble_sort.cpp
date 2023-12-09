@@ -1,48 +1,51 @@
 #include <iostream>
 
-using namespace std;
- 
-template <class T>
-void Print(T& vec, int n, string s){
-    cout << s << ": [" << flush;
-    for (int i=0; i<n; i++){
-        cout << vec[i] << flush;
-        if (i < n-1){
-            cout << ", " << flush;
-        }
-    }
-    cout << "]" << endl;
+using namespace std ;
+
+ #include <iostream>
+
+// Assuming 'size' is a global variable or defined somewhere in your code
+const int size = 10;
+
+// Assuming there is a swap function
+void swap(int* a, int* b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
 }
- 
-void swap(int* x, int* y){
-    int temp = *x;
-    *x = *y;
-    *y = temp;
-}
- 
-void BubbleSort(int A[], int n){
-    int flag = 0;
-    for (int i=0; i<n-1; i++){
-        for (int j=0; j<n-1-i; j++){
-            if (A[j] > A[j+1]){
-                swap(&A[j], &A[j+1]);
-                flag = 1;
+
+void bubble_sort(int a[]) {
+    for (int i = 0; i < size; i++) {
+        bool is_sorted = true;
+        for (int j = 0; j < size - 1 - i; j++) {
+            if (a[j] > a[j + 1]) {
+                swap(&a[j], &a[j + 1]);
+                is_sorted = false;
             }
         }
-        if (flag == 0){
-            return;
+        if (is_sorted) {
+            break;
         }
     }
 }
- 
+
 int main() {
- 
-    int A[] = {3, 7, 9, 10, 6, 5, 12, 4, 11, 2};
-    int n = sizeof(A)/sizeof(A[0]);
-    Print(A, n, "\t\tA");
- 
-    BubbleSort(A, n);
-    Print(A, n, " Sorted A");
- 
+    int arr[size] = {5, 2, 9, 1, 5, 6, 0, 8, 3, 7};
+
+    std::cout << "Original array: ";
+    for (int i = 0; i < size; i++) {
+        std::cout << arr[i] << " ";
+    }
+    std::cout << std::endl;
+
+    // Call the bubble_sort function
+    bubble_sort(arr);
+
+    std::cout << "Sorted array: ";
+    for (int i = 0; i < size; i++) {
+        std::cout << arr[i] << " ";
+    }
+    std::cout << std::endl;
+
     return 0;
 }
