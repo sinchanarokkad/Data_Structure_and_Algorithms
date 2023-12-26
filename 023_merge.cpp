@@ -3,9 +3,9 @@
  
 using namespace std;
  
-class Array{
- 
-private:
+class Array
+{
+ private:
     int* A;
     int size;
     int length;
