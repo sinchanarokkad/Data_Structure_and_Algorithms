@@ -1,13 +1,15 @@
 #include <iostream>
 using namespace std;
  
-class Node{
+class Node
+{
 public:
     int data;
     Node* next;
 };
  
-class CircularLinkedList{
+class CircularLinkedList
+{
 private:
     Node* head;
 public:
@@ -20,7 +22,8 @@ public:
     
 };
  
-CircularLinkedList::CircularLinkedList(int *A, int n) {
+CircularLinkedList::CircularLinkedList(int *A, int n)
+ {
  
     Node* t;
     Node* tail;
@@ -40,7 +43,8 @@ CircularLinkedList::CircularLinkedList(int *A, int n) {
     }
 }
  
-void CircularLinkedList::Display() {
+void CircularLinkedList::Display()
+ {
     Node* p = head;
     do {
         cout << p->data << " -> " << flush;
@@ -49,7 +53,8 @@ void CircularLinkedList::Display() {
     cout << endl;
 }
  
-void CircularLinkedList::recursiveDisplay(Node *p) {
+void CircularLinkedList::recursiveDisplay(Node *p)
+ {
     static int flag = 0;
     if (p != head || flag == 0){
         flag = 1;
@@ -59,19 +64,23 @@ void CircularLinkedList::recursiveDisplay(Node *p) {
     flag = 0;
 }
  
-CircularLinkedList::~CircularLinkedList() {
+CircularLinkedList::~CircularLinkedList() 
+{
     Node* p = head;
-    while (p->next != head){
+    while (p->next != head)
+    {
         p = p->next;
     }
  
-    while (p != head){
+    while (p != head)
+    {
         p->next = head->next;
         delete head;
         head = p->next;
     }
  
-    if (p == head){
+    if (p == head)
+    {
         delete head;
         head = nullptr;
     }
@@ -79,7 +88,8 @@ CircularLinkedList::~CircularLinkedList() {
 }
  
  
-int main() {
+int main()
+ {
  
     int A[] = {1, 3, 5, 7, 9};
  
