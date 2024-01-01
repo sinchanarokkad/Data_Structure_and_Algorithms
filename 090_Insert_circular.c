@@ -63,8 +63,8 @@ int main()
 
   
     Insert(&Head, 0, 1);
-    Insert(&Head, 1, 2);
-    Insert(&Head, 2, 3);
+    Insert(&Head, 1, 8);
+    Insert(&Head, 2, 32);
 
    
     printf("Circular Linked List: ");
