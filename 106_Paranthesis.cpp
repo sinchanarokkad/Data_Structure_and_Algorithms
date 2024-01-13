@@ -89,31 +89,29 @@ char Stack::stackTop() {
  
 bool isBalanced(char* exp){
  
-    // Create a stack
+   
     Stack stk((int)strlen(exp));
  
-    // Process expression
     for (int i=0; i<strlen(exp); i++){
  
-        // ( found: Push to stack
+      
         if (exp[i] == '('){
             stk.push(exp[i]);
- 
-            // ( found
+
         } else if (exp[i] == ')'){
  
-            // ) and stack is empty: Unbalanced expression
+            
             if (stk.isEmpty()){
                 return false;
  
-                // ) and stack is not empty
+              
             } else {
                 stk.pop();
             }
         }
     }
  
-    // If stack is empty then balanced else unbalanced
+    
     return stk.isEmpty() ? true : false;
  
 }
