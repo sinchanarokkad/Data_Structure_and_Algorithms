@@ -46,7 +46,7 @@ void Display()
     p = top;
     while (p != NULL)
     {
-        printf("%c ", p->data); // Corrected format specifier
+        printf("%c ", p->data);
         p = p->next;
     }
     printf("\n");
@@ -119,7 +119,7 @@ char *InToPost(char *infix)
 
 int main()
 {
-    char infix[] = "a+b*c-d/e"; // Corrected initialization
+    char infix[] = "a+b*c-d/e"; 
 
     if (isBalanced(infix))
     {
