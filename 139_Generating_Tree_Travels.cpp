@@ -27,7 +27,7 @@ public:
     ~Tree();
     void CreateTree();
     void Preorder(Node* p);
-    void Preorder() { Preorder(root); }  // Passing Private Parameter in Constructor
+    void Preorder() { Preorder(root); } 
     void Inorder(Node* p);
     void Inorder() { Inorder(root); }
     void Postorder(Node* p);
@@ -221,7 +221,7 @@ int searchInorder(int inArray[], int inStart, int inEnd, int data){
 }
  
 Node* Tree::generateFromTraversal(int *inorder, int *preorder, int inStart, int inEnd) {
-    // Reference: https://algorithms.tutorialhorizon.com/make-a-binary-tree-from-given-inorder-and-preorder-traveral/
+    
     static int preIndex = 0;
  
     if (inStart > inEnd){
